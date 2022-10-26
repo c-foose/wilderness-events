@@ -71,7 +71,7 @@ function Event() {
         />
       </div>
       <div className="nisseperator relative" />
-      <div className="px-3 py-2">
+      <div className="px-3 py-2" hidden={settings.event}>
         <div className="flex flex-row mb-1 relative">
           <div className="flex-grow">Next event:</div>
           <div className="absolute top-0 right-0">
@@ -102,7 +102,7 @@ function Event() {
         </div>
       </div>
       <div className="nisseperator relative" />
-      <div className="px-3 py-2">
+      <div className="px-3 py-2" hidden={settings.location}>
         <div className="flex flex-row mb-1 relative">
           <div className="flex-grow">Location:</div>
           {/*          <div className="absolute top-0 right-0">

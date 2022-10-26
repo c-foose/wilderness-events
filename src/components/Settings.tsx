@@ -10,13 +10,15 @@ function Settings({ show, onShowChange }: Props) {
   const { settings, setSettings } = useSettingsContext()
   const [notify, setNotify] = useState<boolean>(settings.notify || false)
   const [special, setSpecial] = useState<boolean>(settings.special || false)
+  const [location, hideLocation] = useState<boolean>(settings.location || false)
+  const [event, hideEvent] = useState<boolean>(settings.event || false)
 
   useEffect(() => {
-    setSettings({ notify, special })
-  }, [notify, special])
+    setSettings({ notify, special, location, event })
+  }, [notify, special, location, event])
 
   return show ? (
-    <div className="w-full absolute p-2 bottom-0 nisborder border-t-4 border-x-0 border-b-0">
+    <div className="w-full p-2 bottom-0 nisborder border-t-4 border-x-0 border-b-0">
       <div className="flex items-center">
         <p className="flex-grow font-bold text-lg">Settings</p>
         <div
@@ -41,6 +43,26 @@ function Settings({ show, onShowChange }: Props) {
             onChange={() => setSpecial(!special)}
           />
           Only show special events
+        </label>
+        <label className="p-2">
+          <input
+            className="mr-2"
+            type="checkbox"
+            name="location"
+            checked={location}
+            onChange={() => hideLocation(!location)}
+          />
+          Hide Location
+        </label>
+        <label className="p-2">
+          <input
+            className="mr-2"
+            type="checkbox"
+            name="event"
+            checked={event}
+            onChange={() => hideEvent(!event)}
+          />
+          Hide Event
         </label>
       </div>
     </div>

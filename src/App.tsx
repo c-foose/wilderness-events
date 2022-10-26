@@ -8,7 +8,7 @@ function App() {
 
   return (
     <SettingsProvider>
-      <div className="relative nisborder border-2 w-72 h-72">
+      <div className="relative nisborder border-2 w-72">
         <div className="absolute p-3 right-0">
           <div
             className="nissmallimagebutton menubutton bg-[url('./assets/settingsbutton.png')]"
